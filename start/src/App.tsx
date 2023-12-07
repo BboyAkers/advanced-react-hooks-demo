@@ -113,19 +113,6 @@ const GithubUserCard = ({username}) => {
 
 
   // useEffect to fetch the github user data
-  useEffect(() => {
-    if(!username) return;
-    setStatus('pending');
-    fetchGithubUser(username)
-      .then(data => {
-        setGithubUser(data);
-        setStatus('resolved');
-      })
-      .catch(error => {
-        setError(error);
-        setStatus('rejected');
-      })
-  }, [username])
 
   if(status == 'idle') {
     return (
